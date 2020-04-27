@@ -12,37 +12,58 @@
       #under-construction {
         color: red;
       }
-      #about {
+      .about {
         text-align: justify;
         background-color: rgb(1, 53, 63);
         color: rgba(255, 255, 255, 0.5);
         border: 2px solid rgb(13, 48, 54);
-        border-top: 5px solid rgb(13, 48, 54);
+        border-top: 8px solid rgb(13, 48, 54);
         padding: 15px;
         margin: 10px;
-        width: 60%;
+        width: 70%;
         position: absolute;
         left: 5px;
-        top: 140px;
+        top: 200px;
         z-index: 1
       }
       h2, h3{
         color: rgb(94, 170, 184);
       }
-      #main-head {
+      .main-head {
         background-color: rgb(94, 170, 184);
         color:rgb(1, 53, 63);
         border-top: 2px ridge rgb(13, 48, 54);
         border-bottom: 2px ridge rgb(13, 48, 54);
         margin: auto;
-        padding: 10px;
-        padding-left: 200px;
+        padding-top: 10px;
+        padding-left: 100px;
+        padding-right: 100px;
         width: 100%;
+        height: 25%;
         box-sizing: border-box;
         position: absolute;
         z-index: 3;
       }
-      #contents-list {
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(1, 53, 63);
+        width: 100%;
+        position: absolute;
+        top: 160px;
+        z-index: 100;
+      }
+      .topnav a {
+        float: left;
+        display: block;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .topnav a:hover {
+        color: rgb(94, 170, 184);
+        background-color: rgb(13, 48, 54);
+      }
+      /*#contents-list {
         background-color: rgb(1, 53, 63);
         color: rgba(255, 255, 255, 0.5);
         border: 2px solid rgb(13, 48, 54);
@@ -54,7 +75,7 @@
         left: 70%;
         top: 140px;
         z-index: 2;
-      }
+      }*/
       a {
         color: rgba(255, 255, 255, 0.5);
       }
@@ -64,21 +85,19 @@
     </style>
   </head>
   <body>
-    <div id="main-head">
+    <div class="main-head">
       <h1>Michael C. Cruz</h1>
       <p id="under-construction">This website is under construction!</p>
     </div>
 
-    <div id="contents-list">
-      <h2>Contents</h2>
-      <ul>
-        <li><a href="https://michael7cruz.github.io/">Home</a></li>
-        <li>Blogs</li>
-        <li>Learn About</li>
+    <div class="topnav">
+        <a href="https://michael7cruz.github.io/">Home</a>
+        <a>Blogs</a>
+        <a>Learn About</a>
       </ul>
     </div>
 
-    <div id="about">
+    <div class="about">
       <h2>About Me</h2>
       <p>Hello world! My name is Michael. I am currently a student taking the opportunity to learn all I can. Quarantine days, I am taking courses in <a target="_blank" href="https://khanacademy.org">Khan Academy</a> online because it's <strong>fun</strong> to learn there.</p>
 
@@ -108,4 +127,3 @@
     </div>
   </body>
 </html>
-
