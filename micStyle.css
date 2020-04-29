@@ -15,8 +15,8 @@ body {
   width: 55%;
   height: 100%;
   position: absolute;
-  right: 100px;
-  left: 110px;
+  right: 120px;
+  left: 120px;
   top: 180px;
   z-index: 1
 }
