@@ -10,8 +10,10 @@ body {
   background-color: rgb(1, 53, 63);
   color: rgba(255, 255, 255, 0.5);
   border: 3px solid rgb(13, 48, 54);
+  overflow-y: auto;
   padding: 15px;
   width: 75%;
+  height: 100%;
   position: absolute;
   right: 0px;
   top: 180px;
