@@ -14,7 +14,7 @@ body {
   width: 55%;
   position: absolute;
   right: 0px;
-  top: 175px;
+  top: 180px;
   z-index: 1
 }
 .left-div {
@@ -26,8 +26,8 @@ body {
   width: 40%;
   height: 100%;
   position: absolute;
-  right: 60%;
-  top: 175px;
+  left: 0px;
+  top: 180px;
   z-index: 1
 }
 
