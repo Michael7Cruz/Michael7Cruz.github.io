@@ -32,7 +32,7 @@ var contingentCount = function(configProp, index) {
 
 //A function that will generate a square wave for some period.
 var squareWave = function(period, t) {
-    var y = 2*(2*floor(t/period) - floor(2*t/period)) + 1;
+    var y = 2*(2*Math.floor(t/period) - Math.floor(2*t/period)) + 1;
     return y;
 };
 
