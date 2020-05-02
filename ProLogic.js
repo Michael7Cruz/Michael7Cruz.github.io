@@ -258,7 +258,7 @@ var operNOT = function(matrix, columnIndex) {
 
 //Perform Transpose on Matrices
 /******Objects******/
-
+/**
 var PropConstants = function(configProp) {
     this.propName = configProp.propName;
     this.status = configProp.status;
@@ -289,7 +289,7 @@ var ANDtruths = operAND(dsd);
 var ORtruths = operOR(dsd);
 var XORtruths = operXOR(dsd);
 var NOTtruths = operNOT(dsd, 1);
-
+*/
 /*
 //Composition of funtions
 println(XORtruths);
