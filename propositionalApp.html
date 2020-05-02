@@ -60,7 +60,7 @@
         
         function displayPropositions() {
             var naEl = document.getElementById("na");
-            naEl.innerHTML = configProp[0][0].status;
+            naEl.innerHTML = truthValueGenerate(configProp, 1);
             console.log(configProp);
         };
         button1.addEventListener("click", addPropositions);
