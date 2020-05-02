@@ -55,9 +55,10 @@
             var statusVal = document.getElementById("status").value;
             var sentenceVal = document.getElementById("sentence").value;
             configProp.concat([{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]);
+            naEl.innerHTML = configProp[0].status;
             console.log(configProp);
         };
-        naEl.innerHTML = configProp[1].status;
+        
         button1.addEventListener("click", addPropositions)
         
     </script>
