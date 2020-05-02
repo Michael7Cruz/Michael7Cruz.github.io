@@ -104,7 +104,7 @@ var concTruth = function(array1, array2){
 
 var operAND = function(matrix, indices) {
     var truthValues = [[]];
-    var numRows = pow(2,matrix[0].length); //Count the number of rows to generate.
+    var numRows = Math.pow(2,matrix[0].length); //Count the number of rows to generate.
     
     var temp = matrix[0].length;
     function isOnto(test) {
@@ -153,7 +153,7 @@ var operAND = function(matrix, indices) {
 
 var operOR = function(matrix, indices) {
     var truthValues = [[]];
-    var numRows = pow(2,matrix[0].length); //Count the number of rows to generate.
+    var numRows = Math.pow(2,matrix[0].length); //Count the number of rows to generate.
     var temp = matrix[0].length;
     function isOnto(test) {
         return test.length === temp;
@@ -201,7 +201,7 @@ var operOR = function(matrix, indices) {
 
 var operXOR = function(matrix, index) {
     var truthValues = [[]];
-    var numRows = pow(2,matrix[0].length); //Count the number of rows to generate.
+    var numRows = Math.pow(2,matrix[0].length); //Count the number of rows to generate.
     
     var temp = matrix[0].length;
     function isOnto(test) {
@@ -249,7 +249,7 @@ var operXOR = function(matrix, index) {
 
 var operNOT = function(matrix, columnIndex) {
     var truthValues = [[]];
-    var numRows = pow(2,matrix[0].length); //Count the number of rows to generate.
+    var numRows = Math.pow(2,matrix[0].length); //Count the number of rows to generate.
     for (var i = 0; i < numRows; i++) {
         truthValues[i] = (matrix[i][columnIndex] + 1) % 2;
     }
