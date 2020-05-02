@@ -8,9 +8,14 @@
 var propConstantArray = [];
 var contingents = 0; //store counted number of columns
 
-var configProp = [
+configProp = [
     [
-        //This will be filled with propositions.   
+        //This will be filled with propositions.
+        {
+            symbol: "p",
+            status: "contingent",
+            sentence: "This is a proposition."
+        }   
     ]
 ];
 
