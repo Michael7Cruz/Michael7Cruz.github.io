@@ -19,6 +19,7 @@ var configProp = [
     ]
 ];
 
+export {configProp};
 //Count the number of contingent propositional constants
 /*
 var contingentCount = function(configProp, index) {
