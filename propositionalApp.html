@@ -15,6 +15,76 @@
       #button-add {
         margin-top: 12px;
       }
+      .top-menu {
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.5);;
+        width: 100%;
+        border-top: 4px solid rgb(13, 48, 54);
+        border-bottom: 4px solid rgb(13, 48, 54);
+        padding-left: 10px;
+        box-sizing: border-box;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 100;
+      }
+      .top-menu span{
+        float: left;
+        background-color: rgb(1, 53, 63);
+        display: block;
+        border: 1px solid;
+        text-align: center;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+      }
+      .top-menu span:hover{
+        color: rgb(94, 170, 184);
+        background-color: rgb(13, 48, 54);
+        cursor: pointer;
+      }
+      .calculator {
+        background-color: rgba(255, 255, 255, 0.75);
+        color:black;
+        border: 8px solid rgb(1, 37, 44);
+        border-top: 3px solid;
+        box-sizing: border-box;
+        padding: 5px 5px 5px 5px;
+        z-index: 101;
+      }
+      #calculator-DFC {
+        width: 300px;
+        height: 500px;
+        display: none;
+        position: absolute;
+        top: 35px;
+        left: 0px;
+      }
+      .calculator div.x-button {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 0px;
+        right: 0px;
+        cursor: pointer;
+      }
+      .configprop-data {
+        position: absolute;
+        top: 70px;
+        left: 5px;
+      }
+      .configprop-data table {
+        border-collapse: collapse;
+        border: 5px solid;
+      }
+      .configprop-data table thead {
+        border: 5px solid;
+      }
+      th, td {
+        border: 1px solid;
+        padding: 8px;
+      }
     </style>
   </head>
   <body>
@@ -33,15 +103,52 @@
         <h2>Apps</h2>
         <h3><a href="propositionalApp.html">Propositional Logic</a></h3>
     </div>
-
+    
     <div class="about">
-      <div class ="calculator">
-        <h3>Define Proposition Constant</h3>
-        <p><strong>Symbol: </strong></p><input type="text" id="symbol"></input>
-        <p><strong>Status: </strong></p><input type="text" id="status"></input><br>
-        <p><strong>Sentence: </strong></p><input type="text" id="sentence"></input><br>
-        <button width: "24px" id="button-add">ADD</button>
-        <button width: "24px" id="button-display">Display</button>
+      <div class="top-menu">
+        <span id="calculator-DFC-menu">Proposition Constants</span>
+        <span>MENU</span>
+        <span>MENU</span>
+        <span>MENU</span>
+        <span>MENU</span>
+        <span>MENU</span>
+      </div>
+
+      <div class="configprop-data">
+        <table>
+          <thead>
+            <tr>
+              <th>symbol</th>
+              <th>status</th>
+              <th>sentence</th>
+              <th>location</th>
+            </tr>
+          </thead>
+          <tbody id="configprop-data-tbody">
+            <tr>
+              <td>laman</td>
+              <td>laman</td>
+              <td>laman</td>
+              <td>laman</td>                            
+            </tr>
+            <tr>
+              <td>laman</td>
+              <td>laman</td>
+              <td>laman</td>
+              <td>laman</td>                            
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="calculator" id="calculator-DFC">
+        <div class="x-button">x</div>
+        <p><strong>Define Proposition Constant</strong></p>
+        <p>Symbol: </p><input type="text" id="symbol"></input>
+        <p>Status: </p><input type="text" id="status"></input><br>
+        <p>Sentence: </p><input type="text" id="sentence"></input><br>
+        <p>Location: </p><input type="text" id="location"></input><br>
+        <button width= "24px" id="button-add">ADD</button>
+        <button width= "24px" id="button-display">Display</button>
       </div>
       <p id="na">dsdsad</p>
     </div>
@@ -50,11 +157,42 @@
     <script>
         var button1 = document.getElementById("button-add");
         var button2 = document.getElementById("button-display");  
+        var menu1 = document.getElementById("calculator-DFC-menu");
+        var dfcEL = document.getElementById("calculator-DFC");
+        var xButton = document.getElementsByClassName("x-button");
+        var tbodyNodes = document.querySelectorAll("#configprop-data-tbody tr")[0].childNodes[1].innerHTML;
+        
+        console.log(tbodyNodes);
+        function openMenuDfcEl() {
+          if (dfcEL.style.display === "none") {
+            dfcEL.style.display = "block";
+          } else {
+            dfcEL.style.display = "none";
+          }
+        };
+        
         function addPropositions() {
             var symbolVal = document.getElementById("symbol").value;
             var statusVal = document.getElementById("status").value;
             var sentenceVal = document.getElementById("sentence").value;
-            configProp.push([{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]);
+            var locationVal = document.getElementById("location").value;
+
+            configProp.splice(locationVal,1,[{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]);
+
+            var trEl = document.createElement("tr");
+            var tdElSymbol = document.createElement("td");
+            var tdElStatus = document.createElement("td");
+            var tdElSentence = document.createElement("td");
+            var tbodyEl = document.getElementById("configprop-data-tbody");
+
+            tdElSymbol.innerHTML = configProp[locationVal][0].symbol;
+            tdElStatus.innerHTML = configProp[locationVal][0].status;
+            tdElSentence.innerHTML = configProp[locationVal][0].sentence;
+            trEl.appendChild(tdElSymbol);
+            trEl.appendChild(tdElStatus);
+            trEl.appendChild(tdElSentence);
+            tbodyEl.appendChild(trEl);
+            
             console.log(configProp);
         };
         
@@ -63,8 +201,12 @@
             naEl.innerHTML = operOR(truthValueGenerate(configProp, 1)).toString();
             console.log(operOR(truthValueGenerate(configProp, 1)).toString());
         };
+
         button1.addEventListener("click", addPropositions);
         button2.addEventListener("click", displayPropositions);
+        menu1.addEventListener("click", openMenuDfcEl);
+        xButton[0].addEventListener("click", openMenuDfcEl);
+        console.log(dfcEL);
     </script>
   </body>
 </html>
