@@ -55,7 +55,7 @@
             var statusVal = document.getElementById("status").value;
             var sentenceVal = document.getElementById("sentence").value;
           
-            configProp.push([{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]);
+            configProp.concat([{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]);
             naEl.innerHTML = configProp[0][1].status;
             console.log(configProp);
         };
