@@ -8,7 +8,7 @@ export {configProp};
 var propConstantArray = [];
 var contingents = 0; //store counted number of columns
 
-var configProp = [
+export configProp = [
     [
         //This will be filled with propositions.
         {
