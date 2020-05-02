@@ -47,7 +47,7 @@ var truthValueGenerate = function(configProp, index) {
         }
     }
     
-    var numRows = pow(2,configProp[0].length); //Count the number of rows to generate.
+    var numRows = Math.pow(2,configProp[0].length); //Count the number of rows to generate.
     
     //Generates a _numRows_ by _contingents_ matrix
     for (var i = 0; i < numRows; i++) {
