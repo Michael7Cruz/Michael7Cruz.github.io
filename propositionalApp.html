@@ -48,15 +48,14 @@
 
     <script type="text/javascript" src="ProLogic.js"></script>
     <script>
-        var button1 = document.getElementById("button1");
-        
+        var button1 = document.getElementById("button-add");
         function addPropositions() {
             var naEl = document.getElementById("na");
             var symbolVal = document.getElementById("symbol").value;
             var statusVal = document.getElementById("status").value;
             var sentenceVal = document.getElementById("sentence").value;
             configProp.concat([{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]);
-            naEl.innerHTML = "sas";
+            naEl.innerHTML = "configProp.toString()";
             console.log(configProp);
         };
 
