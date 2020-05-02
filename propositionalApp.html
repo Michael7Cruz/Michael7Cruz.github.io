@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="micStyle.css">
+    <title>Michael Cruz Website</title>
+    <style>
+      .code-lines {
+        background-color: white;
+        text-align: left;
+        color: black;
+        font-size: 15px;
+      }
+      #button-add {
+        margin-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-head">
+      <h1>Michael C. Cruz</h1>
+      <p id="under-construction">This website is under construction!</p>
+    </div>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a>Blogs</a>
+        <a href="study.html">Study</a>
+      </ul>
+    </div>
+
+    <div class="left-div">
+        <h2>Apps</h2>
+        <h3><a href="propositionalApp.html">Propositional Logic</a></h3>
+    </div>
+
+    <div class="about">
+      <div class ="calculator">
+        <h3>Define Proposition Constant</h3>
+        <p><strong>Symbol: </strong></p><input type="text" id="symbol"></input>
+        <p><strong>Status: </strong></p><input type="text" id="status"></input><br>
+        <p><strong>Sentence: </strong></p><input type="text" id="sentence"></input><br>
+        <button width: "24px" id="button-add">ADD</button>
+          
+      </div>
+      <p id="na">dsdsad</p>
+    </div>
+
+    <script type="text/javascript" src="ProLogic.js"></script>
+    <script>
+        var button1 = document.getElementById("button1");
+        
+        function addPropositions() {
+            var naEl = document.getElementById("na");
+            var symbolVal = document.getElementById("symbol").value;
+            var statusVal = document.getElementById("status").value;
+            var sentenceVal = document.getElementById("sentence").value;
+            configProp.concat([{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]);
+            naEl.innerHTML = "sas";
+            console.log(configProp);
+        };
+
+        button1.addEventListener("click", addPropositions)
+        
+    </script>
+  </body>
+</html>
