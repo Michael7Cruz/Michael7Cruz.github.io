@@ -61,7 +61,7 @@
         function displayPropositions() {
             var naEl = document.getElementById("na");
             naEl.innerHTML = operOR(truthValueGenerate(configProp, 1)).toString();
-            console.log(configProp);
+            console.log(operOR(truthValueGenerate(configProp, 1)).toString());
         };
         button1.addEventListener("click", addPropositions);
         button2.addEventListener("click", displayPropositions);
