@@ -4,11 +4,10 @@
 -[update 2020 May 2] Function truthValueGenerate takes two arguments (configProp and index); will do the funtion of contingentCount. For each operators check if the input matrix contains arrays with same number of elements. If that is true, check if the number of elements in a row is atleast the number of rows. If that is true perform a transpose of matrix and then calculate the result. If not, check if log base 2 of the matrix[0].length is an integer (to check if this is a "generated matrix"). If that is the case run operator (without transpose). If not, transpose and then run operator. 
 -p OP q: operOP(p.concat(q))
 **/
-export {configProp};
 var propConstantArray = [];
 var contingents = 0; //store counted number of columns
 
-export configProp = [
+var configProp = [
     [
         //This will be filled with propositions.
         {
