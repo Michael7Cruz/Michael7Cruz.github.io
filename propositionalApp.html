@@ -357,7 +357,7 @@
             var symbolVal = document.getElementById("symbol").value;
             var statusVal = document.getElementById("status").value;
             var sentenceVal = document.getElementById("sentence").value;
-            configProp.concat([{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]);
+            configProp.push([[{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]]);
         };
         
         function displayPropositions() {
