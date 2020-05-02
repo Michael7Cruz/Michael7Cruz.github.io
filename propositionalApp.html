@@ -41,7 +41,7 @@
         <p><strong>Status: </strong></p><input type="text" id="status"></input><br>
         <p><strong>Sentence: </strong></p><input type="text" id="sentence"></input><br>
         <button width: "24px" id="button-add">ADD</button>
-          
+        <button width: "24px" id="button-display">Display</button>
       </div>
       <p id="na">dsdsad</p>
     </div>
@@ -49,19 +49,21 @@
     <script type="text/javascript" src="ProLogic.js"></script>
     <script>
         var button1 = document.getElementById("button-add");
+        var button2 = document.getElementById("button-display");  
         function addPropositions() {
-            var naEl = document.getElementById("na");
             var symbolVal = document.getElementById("symbol").value;
             var statusVal = document.getElementById("status").value;
             var sentenceVal = document.getElementById("sentence").value;
-          
             configProp.concat([{symbol: symbolVal, status: statusVal, sentence: sentenceVal}]);
+        };
+        
+        function displayPropositions() {
+            var naEl = document.getElementById("na");
             naEl.innerHTML = configProp[0][1].status;
             console.log(configProp);
         };
-        
-        button1.addEventListener("click", addPropositions)
-        
+        button1.addEventListener("click", addPropositions);
+        button2.addEventListener("click", displayPropositions);
     </script>
   </body>
 </html>
