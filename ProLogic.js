@@ -5,7 +5,6 @@
 -p OP q: operOP(p.concat(q))
 **/
 var propConstantArray = [];
-var contingents = 0; //store counted number of columns
 
 var configProp = [
     [
@@ -14,6 +13,7 @@ var configProp = [
             symbol: "p",
             status: "contingent",
             sentence: "This is a proposition."
+            state: [];
         }   
     ]
 ];
