@@ -254,7 +254,7 @@ var operXOR = function(matrix, index) {
 };
 
 var operNOT = function(matrix) {
-    var numRows = pow(2,matrix[0].length); //Count the number of rows to generate.
+    var numRows = Math.pow(2,matrix[0].length); //Count the number of rows to generate.
     var truthValues = [[]];
     if (matrix[0].length >= matrix.length) {
         matrix = transposeMatrix(matrix);
