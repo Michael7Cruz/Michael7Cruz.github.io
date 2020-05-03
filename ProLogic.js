@@ -65,8 +65,8 @@ var squareWave = function(period, t) {
     var numRows = 0;
     
     //Contingency Counter
-    for (var i = 0; i < config[index].length; i++) {
-        if (config[index][i].status === "contingent") {
+    for (var i = 0; i < configProp[index].length; i++) {
+        if (configProp[index][i].status === "contingent") {
             contingents++;
         }
     }
