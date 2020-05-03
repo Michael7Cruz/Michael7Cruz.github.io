@@ -30,24 +30,48 @@ var contingentCount = function(configProp, index) {
     }
 };*/
 
+//Adds the contents of an array.
+function myFunc(total, num) {
+  return total + num;
+}
+
+//Transpose a non-operable matrix
+var transposeMatrix = function(matrix) {
+    var result = new Array(matrix[0].length);
+    
+    for (var i = 0; i < result.length; i++) {
+        result[i] = new Array(matrix.length);
+        
+        for (var j = 0; j < result[i].length; j++) {
+            result[i][j] = matrix[j][i];
+        }
+    }
+    
+    return result;
+};
+
+//Concatenates two truth values array
+var concTruth = function(array1, array2){
+    array1.concat(array2);
+};
+
 //A function that will generate a square wave for some period.
 var squareWave = function(period, t) {
     var y = 2*(2*Math.floor(t/period) - Math.floor(2*t/period)) + 1;
     return y;
-};
-
-var truthValueGenerate = function(configProp, index) {
+};var truthValueGenerate = function(configProp, index) {
     var truthTable = []; //An n-dimensional Matrix: truthTable[i,j]
-    contingents = 0;
+    var contingents = 0;
+    var numRows = 0;
     
     //Contingency Counter
-    for (var i = 0; i < configProp[index].length; i++) {
-        if (configProp[index][i].status === "contingent") {
+    for (var i = 0; i < config[index].length; i++) {
+        if (config[index][i].status === "contingent") {
             contingents++;
         }
     }
     
-    var numRows = Math.pow(2,configProp[0].length); //Count the number of rows to generate.
+    numRows = Math.pow(2,configProp[index].length); //Count the number of rows to generate.
     
     //Generates a _numRows_ by _contingents_ matrix
     for (var i = 0; i < numRows; i++) {
@@ -74,32 +98,14 @@ var truthValueGenerate = function(configProp, index) {
             }
         }
     }
-    return truthTable;
-};
-
-//Adds the contents of an array.
-function myFunc(total, num) {
-  return total + num;
-}
-
-//Transpose a non-operable matrix
-var transposeMatrix = function(matrix) {
-    var result = new Array(matrix[0].length);
     
-    for (var i = 0; i < result.length; i++) {
-        result[i] = new Array(matrix.length);
-        
-        for (var j = 0; j < result[i].length; j++) {
-            result[i][j] = matrix[j][i];
-        }
+    //create states keys
+    for (var i = 0; i < configProp[index].length; i++) {
+        var transposedTruthTable = transposeMatrix(truthTable);
+        configProp[index][i].states.push(transposedTruthTable[i]);
     }
     
-    return result;
-};
-
-//Concatenates two truth values array
-var concTruth = function(array1, array2){
-    array1.concat(array2);
+    return truthTable;
 };
 
 var operAND = function(matrix, indices) {
@@ -247,11 +253,19 @@ var operXOR = function(matrix, index) {
     return truthValues;
 };
 
-var operNOT = function(matrix, columnIndex) {
+var operNOT = function(matrix) {
+    var numRows = pow(2,matrix[0].length); //Count the number of rows to generate.
     var truthValues = [[]];
-    var numRows = Math.pow(2,matrix[0].length); //Count the number of rows to generate.
-    for (var i = 0; i < numRows; i++) {
-        truthValues[i] = (matrix[i][columnIndex] + 1) % 2;
+    if (matrix[0].length >= matrix.length) {
+        matrix = transposeMatrix(matrix);
+        for (var i = 0; i < matrix.length; i++) {
+            truthValues[0][i] = ((matrix[i][0] + 1) % 2); //matrix[i][0] because for some reason, matrix prints a two dimensional array with i rows and a column; 0 in [i][0] to access that column vector.
+           
+        }
+    } else {
+        for (var i = 0; i < matrix.length; i++) {
+            truthValues[i] = ((matrix[i] + 1) % 2);
+        }
     }
     return truthValues;
 };
