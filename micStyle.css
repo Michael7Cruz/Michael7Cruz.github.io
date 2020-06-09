@@ -16,7 +16,7 @@ body {
     height: 100%;
     position: absolute;
     right: 10px;
-    top: 190px;
+    top: 195px;
     z-index: 1
 }
 .about-hobbies {
@@ -44,7 +44,7 @@ body {
     height: 100%;
     position: absolute;
     left: 10px;
-    top: 190px;
+    top: 195px;
     z-index: 1
 }
 h2, h3{
